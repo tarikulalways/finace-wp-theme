@@ -1,1 +1,0 @@
-# finace-wp-theme
