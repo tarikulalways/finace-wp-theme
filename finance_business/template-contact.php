@@ -21,7 +21,13 @@
           ?>
           <div class="col-md-4">
             <div class="contact-item">
-              <?php echo get_field('icon');?>
+              <?php 
+                if(get_field('icon')){
+                  echo get_field('icon');
+                }else{
+                  echo 'fas fa-phone-alt';
+                }
+              ?>
               <h4><?php 
                 if(get_field('title')){
                   echo esc_html(get_field('title'));
@@ -101,6 +107,7 @@
             <?php 
               $brand_items = $config['brand_items'];
               $b = 0;
+              if($brand_items){
               foreach($brand_items as $brand_item){
                 $partner_logo = $brand_item['barand_logo'];
                 $b++
@@ -110,7 +117,7 @@
                 <img src="<?php echo esc_url($partner_logo['url']);?>" title="<?php echo $b;?>" alt="<?php echo $b;?>">
               </div>
             <?php
-              }
+              }}
             ?>
             </div>
           </div>
