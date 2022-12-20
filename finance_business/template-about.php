@@ -150,6 +150,7 @@
             <div class="row">
               <?php 
                 $counter_contetns = $config['counter_contetn'];
+                if($counter_contetns){
                 foreach($counter_contetns as $counter_contetn){
               ?>
               <div class="col-md-6">
@@ -164,6 +165,15 @@
                       echo esc_html($counter_contetn['counter_text']);
                     }
                   ?></div>
+                </div>
+              </div>
+              <?php
+                }}else{
+              ?>
+              <div class="col-md-6">
+                <div class="count-area-content">
+                  <div class="count-digit">500</div>
+                  <div class="count-title">Work Hours</div>
                 </div>
               </div>
               <?php
