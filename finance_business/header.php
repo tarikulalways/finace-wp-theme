@@ -39,9 +39,15 @@
                     <ul class="right-icons">
                         <?php 
                             $header_social_grups = $config['header_social_grup'];
+                            if($header_social_grups){
                             foreach($header_social_grups as $header_social_grup){
                         ?>
                         <li><a href="<?php echo esc_url($header_social_grup['header_social_link']);?>"><i class="<?php echo esc_attr($header_social_grup['header_social_icon']);?>"></i></a></li>
+                        <?php
+                                }
+                            }else{
+                        ?>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <?php
                             }
                         ?>
@@ -62,25 +68,6 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
-                    <!-- <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#top">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="services.html">Our Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="one-page.html">One Page</a>
-                        </li>
-                    </ul> -->
                     <?php
                         wp_nav_menu( array(
                             'theme_location'    => 'finace_menu',
