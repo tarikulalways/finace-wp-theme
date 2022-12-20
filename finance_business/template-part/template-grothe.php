@@ -17,9 +17,10 @@
             <div class="col-md-6 align-self-center">
                 <div class="row">
                     <?php 
-                $counter_contetns = $config['counter_contetn'];
-                foreach($counter_contetns as $counter_contetn){
-              ?>
+                        $counter_contetns = $config['counter_contetn'];
+                        if($counter_contetns){
+                        foreach($counter_contetns as $counter_contetn){
+                    ?>
                     <div class="col-md-6">
                         <div class="count-area-content">
                             <div class="count-digit"><?php echo esc_html($counter_contetn['counter_nbr']);?></div>
@@ -27,8 +28,18 @@
                         </div>
                     </div>
                     <?php
-                }
-              ?>
+                            }
+                        }else{
+                    ?>
+                    <div class="col-md-6">
+                        <div class="count-area-content">
+                            <div class="count-digit">500</div>
+                            <div class="count-title">Work House</div>
+                        </div>
+                    </div>
+                    <?php
+                        }
+                    ?>
                 </div>
             </div>
         </div>
